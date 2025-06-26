@@ -136,10 +136,6 @@ sudo systemctl restart postfix
 echo "Test disk alert" | mail -s "Disk Alert Test" your_email@gmail.com
 ```
 
-```Make sure the mailx package is installed:
-echo "Test disk alert" | mail -s "Disk Alert Test" your_email@gmail.com
-```
-
 ---
 
 ### Customization Options
