@@ -1,20 +1,10 @@
-Here’s a well-structured and professional GitHub project write-up for your **Disk Space Monitor with Email Alert Script for RHEL**. You can copy this into your `README.md` file on GitHub to showcase your work effectively.
-
----
-
-### ✅ GitHub Repository Name:
-
-`disk-monitor-email-alert-rhel`
-
----
-
-### 📄 Project Description
+### Project Description
 
 > This project is a Bash script designed for **Red Hat Enterprise Linux (RHEL)** systems to monitor disk usage on a specified partition (e.g., `/dev/nvme0n1p2`) and automatically **send an email alert** when usage crosses a defined threshold. It uses `mailx` and `Postfix` to notify system admins or clients of low disk space.
 
 ---
 
-### 📁 Project Structure
+### Project Structure
 
 ```
 disk-monitor-email-alert-rhel/
@@ -24,7 +14,7 @@ disk-monitor-email-alert-rhel/
 
 ---
 
-### 📜 Script: `disk_alert.sh`
+### Script: `disk_alert.sh`
 
 ```bash
 #!/bin/bash
@@ -43,7 +33,7 @@ fi
 
 ---
 
-### ⚙️ How It Works
+### How It Works
 
 * Uses `df -h` to check disk usage in human-readable format.
 * Filters the target partition using `grep` and extracts the usage percent using `awk` and `tr`.
@@ -52,7 +42,7 @@ fi
 
 ---
 
-### 🧪 Sample Output
+### Sample Output
 
 ```bash
 [root@localhost projects]# df -h | grep "nvme0n1p2"
@@ -70,13 +60,13 @@ Email sent: "Disk SPACE ALERT! - Warning, disk space is low - 85%"
 
 ---
 
-### 🛠️ Prerequisites
+### Prerequisites
 
 To enable email alerts, **Postfix and mailx** must be configured on your RHEL system.
 
 ---
 
-### ✅ Postfix Setup Guide (for Gmail SMTP)
+### Postfix Setup Guide (for Gmail SMTP)
 
 #### 1. Install Postfix & Mailx
 
@@ -122,7 +112,7 @@ Add:
 [smtp.gmail.com]:587    your_email@gmail.com:your_app_password
 ```
 
-> 💡 Use an **App Password** from your Google account:
+> Use an **App Password** from your Google account:
 > [https://myaccount.google.com/apppasswords](https://myaccount.google.com/apppasswords)
 
 #### 5. Secure Credentials
@@ -144,9 +134,14 @@ sudo systemctl restart postfix
 echo "Test disk alert" | mail -s "Disk Alert Test" your_email@gmail.com
 ```
 
+Make sure the mailx package is installed:
+
+```
+sudo dnf install -y mailx
+```
 ---
 
-### 🧠 Customization Options
+### Customization Options
 
 * **Change Partition**: Replace `"nvme0n1p2"` with any mounted partition name.
 * **Change Threshold**: Modify `80` to any % value based on requirement.
