@@ -150,7 +150,7 @@ sudo dnf install -y mailx
 
 ---
 
-### 🌀 Automation (Optional)
+### Automation (Optional)
 
 To run the script periodically, add it to `cron`:
 
@@ -168,12 +168,10 @@ This runs the check every 30 minutes.
 
 ---
 
-### 📌 Final Notes
+### Final Notes
 
 * This script is ideal for servers with limited partition space like `/boot` or `/var`.
 * The email alert ensures proactive disk space monitoring and system stability.
 * Fully compatible with **RHEL, CentOS**, and **Fedora** systems.
 
 ---
-
-Let me know if you'd like me to help you turn this into a ZIP for upload or assist in extending it with logging or multi-partition support.
